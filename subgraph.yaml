@@ -6,7 +6,7 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: LightmUniversalFactory
-    network: localhost
+    network: mbase
     source:
       address: "0x1A2E0E5db589f44bDA45a7E8e38054a65b0eb946"
       abi: LightmUniversalFactory
@@ -33,7 +33,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: LightmCollection
-    network: localhost
+    network: mbase
     source:
       abi: LightmCollection
     mapping:
@@ -54,7 +54,7 @@ templates:
       file: ./src/mapping.ts
   - kind: ethereum/contract
     name: LightmCatalogImplementer
-    network: localhost
+    network: mbase
     source:
       abi: LightmCatalogImplementer
     mapping:

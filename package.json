@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "create": "graph create lightm-nft/lightm-nft --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create lightm-nft/lightm-nft --node http://127.0.0.1:8020",
+    "create": "graph create lightmnft/lightm-nft --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create lightmnft/lightm-nft --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy lightm-nft/lightm-nft --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy": "graph deploy --product hosted-service lightmnft/lightm-nft",
     "deploy-local": "graph deploy lightm-nft/lightm-nft --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
