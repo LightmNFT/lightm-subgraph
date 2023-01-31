@@ -1,6 +1,6 @@
 specVersion: 0.0.4
-description: LightmUniversalFactory subgraph
-repository: https://github.com/graphprotocol/example-subgraphs
+description: LightmNFT subgraph
+repository: https://github.com/LightmNFT/lightm-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
