@@ -10,6 +10,7 @@ dataSources:
     source:
       address: "0x1A2E0E5db589f44bDA45a7E8e38054a65b0eb946"
       abi: LightmUniversalFactory
+      startBlock: 3650000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
