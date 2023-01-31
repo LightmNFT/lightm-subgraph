@@ -1,0 +1,393 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "validatorLibAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "maRenderUtilsAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "equippableRenderUtilsAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "diamondCutFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "diamondLoupeFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "nestableFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "multiAssetFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "equippableFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collectionMetadataFacetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "initContractAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "implContractAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "mintModuleAddress",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "facetAddress",
+                "type": "address"
+              },
+              {
+                "internalType": "enum IDiamondCut.FacetCutAction",
+                "name": "action",
+                "type": "uint8"
+              },
+              {
+                "internalType": "bytes4[]",
+                "name": "functionSelectors",
+                "type": "bytes4[]"
+              }
+            ],
+            "internalType": "struct IDiamondCut.FacetCut[]",
+            "name": "cuts",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct ILightmUniversalFactory.ConstructParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "catalogAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "LightmCatalogDeployed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "collectionAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "LightmCollectionCreated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "collectionMetadataAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cuts",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "metadataURI",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "type_",
+        "type": "string"
+      }
+    ],
+    "name": "deployCatalog",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "fallbackURI",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "collectionMetadataURI",
+            "type": "string"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "whitelistMintPrice",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "publicMintPrice",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint64",
+                "name": "whitelistMintLimit",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "publicMintLimit",
+                "type": "uint64"
+              },
+              {
+                "internalType": "enum ILightmMintModuleStruct.MintStyle",
+                "name": "mintStyle",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct ILightmMintModuleStruct.MintConfig",
+            "name": "mintConfig",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct LightmInit.InitStruct",
+        "name": "initStruct",
+        "type": "tuple"
+      }
+    ],
+    "name": "deployCollection",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "equippableFacetAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "equippableRenderUtilsAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "implContractAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initContractAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maRenderUtilsAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mintModuleAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "multiAssetFacetAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nestableFacetAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "validatorLibAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "version",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]

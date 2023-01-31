@@ -1,27 +1,84 @@
-specVersion: 0.0.2
-description: Gravatar for Ethereum
+specVersion: 0.0.4
+description: LightmUniversalFactory subgraph
 repository: https://github.com/graphprotocol/example-subgraphs
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: Gravity
-    network: mainnet
+    name: LightmUniversalFactory
+    network: localhost
     source:
-      address: '0x2E645469f354BB4F5c8a05B3b30A929361cf77eC'
-      abi: Gravity
+      address: "0x2Acb089981f4dA3390481A01E5F566A696a07607"
+      abi: LightmUniversalFactory
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - Gravatar
+        - Collection
+        - Catalog
       abis:
-        - name: Gravity
-          file: ./abis/Gravity.json
+        - name: LightmUniversalFactory
+          file: ./abis/LightmUniversalFactory.json
+        - name: LightmCollection
+          file: ./abis/LightmCollection.json
+        - name: LightmCatalogImplementer
+          file: ./abis/LightmCatalogImplementer.json
       eventHandlers:
-        - event: NewGravatar(uint256,address,string,string)
-          handler: handleNewGravatar
-        - event: UpdatedGravatar(uint256,address,string,string)
-          handler: handleUpdatedGravatar
+        - event: LightmCollectionCreated(indexed address,indexed address)
+          handler: handleCollectionCreated
+        - event: LightmCatalogDeployed(indexed address,indexed address)
+          handler: handleCatalogDeployed
       file: ./src/mapping.ts
+templates:
+  - kind: ethereum/contract
+    name: LightmCollection
+    network: localhost
+    source:
+      abi: LightmCollection
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Token
+        - Owner
+        - Collection
+        - Transfer
+      abis:
+        - name: LightmCollection
+          file: ./abis/LightmCollection.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: LightmCatalogImplementer
+    network: localhost
+    source:
+      abi: LightmCatalogImplementer
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Owner
+        - Catalog
+        - Part
+      abis:
+        - name: LightmCatalogImplementer
+          file: ./abis/LightmCatalogImplementer.json
+      eventHandlers:
+        - event: LightmCatalogMetadataURISet(string)
+          handler: handleLightmCatalogMetadataURISet
+        - event: LightmCatalogTypeSet(string)
+          handler: handleLightmCatalogTypeSet
+        - event: AddedPart(indexed uint64,indexed uint8,uint8,address[],string)
+          handler: handleAddedPart
+        - event: AddedEquippables(indexed uint64,address[])
+          handler: handleAddedEquippables
+        - event: SetEquippables(indexed uint64,address[])
+          handler: handleSetEquippables
+        - event: SetEquippableToAll(indexed uint64)
+          handler: handleSetEquippableToAll
+      file: ./src/catalogMapping.ts

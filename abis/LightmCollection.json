@@ -1,0 +1,2013 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "_diamondCut",
+        "type": "tuple[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_init",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "_calldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "DiamondCut",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "_diamondCut",
+        "type": "tuple[]"
+      },
+      { "internalType": "address", "name": "_init", "type": "address" },
+      { "internalType": "bytes", "name": "_calldata", "type": "bytes" }
+    ],
+    "name": "diamondCut",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "_functionSelector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "facetAddress",
+    "outputs": [
+      { "internalType": "address", "name": "facetAddress_", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facetAddresses",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "facetAddresses_",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_facet", "type": "address" }
+    ],
+    "name": "facetFunctionSelectors",
+    "outputs": [
+      {
+        "internalType": "bytes4[]",
+        "name": "facetFunctionSelectors_",
+        "type": "bytes4[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondLoupe.Facet[]",
+        "name": "facets_",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes4", "name": "_interfaceId", "type": "bytes4" }
+    ],
+    "name": "supportsInterface",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "LightmMustRemoveSlotEquipmentFirst",
+    "type": "error"
+  },
+  { "inputs": [], "name": "RMRKChildIndexOutOfRange", "type": "error" },
+  { "inputs": [], "name": "RMRKDuplicateAdd", "type": "error" },
+  { "inputs": [], "name": "RMRKInvalidChildReclaim", "type": "error" },
+  { "inputs": [], "name": "RMRKMaxPendingChildrenReached", "type": "error" },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "childContract", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "RMRKMaxRecursiveBurnsReached",
+    "type": "error"
+  },
+  { "inputs": [], "name": "RMRKNotApprovedOrDirectOwner", "type": "error" },
+  { "inputs": [], "name": "RMRKParentChildMismatch", "type": "error" },
+  { "inputs": [], "name": "RMRKPendingChildIndexOutOfRange", "type": "error" },
+  { "inputs": [], "name": "RMRKUnexpectedNumberOfChildren", "type": "error" },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "childContractAddress",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "acceptChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "childContractAddress",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "acceptChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "parentTokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" },
+      { "internalType": "bytes", "name": "data", "type": "bytes" }
+    ],
+    "name": "addChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "approve",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "owner", "type": "address" }
+    ],
+    "name": "balanceOf",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "burn",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "maxRecursiveBurns",
+        "type": "uint256"
+      }
+    ],
+    "name": "burn",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "parentTokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "index", "type": "uint256" }
+    ],
+    "name": "childOf",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "parentTokenId", "type": "uint256" }
+    ],
+    "name": "childrenOf",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IRMRKNestableEventsAndStruct.Child[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "directOwnerOf",
+    "outputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "bool", "name": "", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getApproved",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "childContract", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "hasChild",
+    "outputs": [
+      { "internalType": "bool", "name": "found", "type": "bool" },
+      { "internalType": "bool", "name": "isPending", "type": "bool" },
+      { "internalType": "uint256", "name": "index", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "owner", "type": "address" },
+      { "internalType": "address", "name": "operator", "type": "address" }
+    ],
+    "name": "isApprovedForAll",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "name",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "destinationId", "type": "uint256" }
+    ],
+    "name": "nestTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "from", "type": "address" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "destinationId", "type": "uint256" },
+      { "internalType": "bytes", "name": "data", "type": "bytes" }
+    ],
+    "name": "nestTransferFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "ownerOf",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "parentTokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "index", "type": "uint256" }
+    ],
+    "name": "pendingChildOf",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "parentTokenId", "type": "uint256" }
+    ],
+    "name": "pendingChildrenOf",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IRMRKNestableEventsAndStruct.Child[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "childAddress", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "reclaimChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "maxRejections", "type": "uint256" }
+    ],
+    "name": "rejectAllChildren",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "from", "type": "address" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "safeTransferFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "from", "type": "address" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "bytes", "name": "data", "type": "bytes" }
+    ],
+    "name": "safeTransferFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "operator", "type": "address" },
+      { "internalType": "bool", "name": "approved", "type": "bool" }
+    ],
+    "name": "setApprovalForAll",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "symbol",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "transfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "destinationId", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "childContractAddress",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" },
+      { "internalType": "bool", "name": "isPending", "type": "bool" },
+      { "internalType": "bytes", "name": "data", "type": "bytes" }
+    ],
+    "name": "transferChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "destinationId", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      {
+        "internalType": "address",
+        "name": "childContractAddress",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" },
+      { "internalType": "bool", "name": "isPending", "type": "bool" },
+      { "internalType": "bytes", "name": "data", "type": "bytes" }
+    ],
+    "name": "transferChild",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "from", "type": "address" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "transferFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "RMRKApprovalForAssetsToCurrentOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RMRKApproveForAssetsCallerIsNotOwnerNorApprovedForAll",
+    "type": "error"
+  },
+  { "inputs": [], "name": "RMRKApproveForAssetsToCaller", "type": "error" },
+  { "inputs": [], "name": "RMRKBadPriorityListLength", "type": "error" },
+  { "inputs": [], "name": "RMRKTokenDoesNotHaveAsset", "type": "error" },
+  { "inputs": [], "name": "RMRKUnexpectedNumberOfAssets", "type": "error" },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "acceptAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "acceptAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "approveForAssets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getActiveAssetPriorities",
+    "outputs": [{ "internalType": "uint16[]", "name": "", "type": "uint16[]" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getActiveAssets",
+    "outputs": [{ "internalType": "uint64[]", "name": "", "type": "uint64[]" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getApprovedForAssets",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "getAssetMetadata",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "getAssetMetadata",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "getAssetReplacements",
+    "outputs": [{ "internalType": "uint64", "name": "", "type": "uint64" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getFullAssets",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint64", "name": "id", "type": "uint64" },
+          { "internalType": "string", "name": "metadataURI", "type": "string" }
+        ],
+        "internalType": "struct ILightmMultiAssetEventsAndStruct.Asset[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getFullPendingAssets",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint64", "name": "id", "type": "uint64" },
+          { "internalType": "string", "name": "metadataURI", "type": "string" }
+        ],
+        "internalType": "struct ILightmMultiAssetEventsAndStruct.Asset[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getPendingAssets",
+    "outputs": [{ "internalType": "uint64[]", "name": "", "type": "uint64[]" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "owner", "type": "address" },
+      { "internalType": "address", "name": "operator", "type": "address" }
+    ],
+    "name": "isApprovedForAllForAssets",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "maxRejections", "type": "uint256" }
+    ],
+    "name": "rejectAllAssets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "rejectAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" }
+    ],
+    "name": "rejectAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "operator", "type": "address" },
+      { "internalType": "bool", "name": "approved", "type": "bool" }
+    ],
+    "name": "setApprovalForAllForAssets",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint16[]", "name": "priorities", "type": "uint16[]" }
+    ],
+    "name": "setPriority",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "tokenURI",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "LightmCurrentCatalogInstanceAlreadyEquippedThisChild",
+    "type": "error"
+  },
+  { "inputs": [], "name": "LightmSlotIsOccupied", "type": "error" },
+  { "inputs": [], "name": "RMRKNoAssetMatchingId", "type": "error" },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment[]",
+        "name": "slotEquipments",
+        "type": "tuple[]"
+      },
+      { "internalType": "bool", "name": "doMoreCheck", "type": "bool" }
+    ],
+    "name": "addSlotEquipments",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "getActiveCatalogRelatedAssets",
+    "outputs": [{ "internalType": "uint64[]", "name": "", "type": "uint64[]" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllCatalogRelatedAssetIds",
+    "outputs": [
+      {
+        "internalType": "uint64[]",
+        "name": "allCatalogRelatedAssetIds",
+        "type": "uint64[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllSlotEquipments",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment[]",
+        "name": "slotEquipments",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getCatalogRelatedAsset",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint64", "name": "id", "type": "uint64" },
+          {
+            "internalType": "address",
+            "name": "catalogAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "targetSlotId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "targetCatalogAddress",
+            "type": "address"
+          },
+          { "internalType": "uint64[]", "name": "partIds", "type": "uint64[]" },
+          { "internalType": "string", "name": "metadataURI", "type": "string" }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.CatalogRelatedAsset",
+        "name": "catalogRelatedAsset",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64[]",
+        "name": "catalogRelatedAssetIds",
+        "type": "uint64[]"
+      }
+    ],
+    "name": "getCatalogRelatedAssets",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint64", "name": "id", "type": "uint64" },
+          {
+            "internalType": "address",
+            "name": "catalogAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "targetSlotId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "targetCatalogAddress",
+            "type": "address"
+          },
+          { "internalType": "uint64[]", "name": "partIds", "type": "uint64[]" },
+          { "internalType": "string", "name": "metadataURI", "type": "string" }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.CatalogRelatedAsset[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "childContract", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" },
+      {
+        "internalType": "uint64",
+        "name": "childCatalogRelatedAssetId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getSlotEquipment",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment",
+        "name": "slotEquipment",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      },
+      { "internalType": "uint64", "name": "slotId", "type": "uint64" }
+    ],
+    "name": "getSlotEquipment",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment",
+        "name": "slotEquipment",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "index", "type": "uint256" }
+    ],
+    "name": "getSlotEquipmentByIndex",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment",
+        "name": "slotEquipment",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getSlotEquipments",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "childContract", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" }
+    ],
+    "name": "getSlotEquipments",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "childContract", "type": "address" },
+      { "internalType": "uint256", "name": "childTokenId", "type": "uint256" },
+      {
+        "internalType": "uint64[]",
+        "name": "childCatalogRelatedAssetIds",
+        "type": "uint64[]"
+      }
+    ],
+    "name": "removeSlotEquipments",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      {
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      },
+      { "internalType": "uint64[]", "name": "slotIds", "type": "uint64[]" }
+    ],
+    "name": "removeSlotEquipments",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "metadataURI",
+        "type": "string"
+      }
+    ],
+    "name": "RMRKCollectionMetdataSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "collectionMetadata",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  { "inputs": [], "name": "ERC721InvalidTokenId", "type": "error" },
+  { "inputs": [], "name": "RMRKAssetAlreadyExists", "type": "error" },
+  { "inputs": [], "name": "RMRKAssetNotFoundInStorage", "type": "error" },
+  { "inputs": [], "name": "RMRKIdZeroForbidden", "type": "error" },
+  { "inputs": [], "name": "RMRKMaxPendingAssetsReached", "type": "error" },
+  { "inputs": [], "name": "RMRKNotApprovedForAssetsOrOwner", "type": "error" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllChildrenRejected",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "approved",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "Approval",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "approved",
+        "type": "bool"
+      }
+    ],
+    "name": "ApprovalForAll",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "approved",
+        "type": "bool"
+      }
+    ],
+    "name": "ApprovalForAllForAssets",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "approved",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ApprovalForAssets",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "assetId",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "replacedId",
+        "type": "uint64"
+      }
+    ],
+    "name": "AssetAccepted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "assetId",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "replacedId",
+        "type": "uint64"
+      }
+    ],
+    "name": "AssetAddedToToken",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "AssetPrioritySet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "assetId",
+        "type": "uint64"
+      }
+    ],
+    "name": "AssetRejected",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "assetId",
+        "type": "uint64"
+      }
+    ],
+    "name": "AssetSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "id",
+        "type": "uint64"
+      }
+    ],
+    "name": "CatalogRelatedAssetAdd",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "childIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "childAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "childId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ChildAccepted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "childIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "childAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "childId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ChildProposed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "childIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "childAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "childId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "fromPending",
+        "type": "bool"
+      }
+    ],
+    "name": "ChildTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fromTokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toTokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "NestTransfer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+          {
+            "internalType": "uint64",
+            "name": "catalogRelatedAssetId",
+            "type": "uint64"
+          },
+          { "internalType": "uint64", "name": "slotId", "type": "uint64" },
+          {
+            "internalType": "uint64",
+            "name": "childCatalogRelatedAssetId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "contractAddress",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct IRMRKNestableEventsAndStruct.Child",
+            "name": "child",
+            "type": "tuple"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct ILightmEquippableEventsAndStruct.SlotEquipment[]",
+        "name": "slotEquipments",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "SlotEquipmentsAdd",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "catalogRelatedAssetId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64[]",
+        "name": "indexes",
+        "type": "uint64[]"
+      }
+    ],
+    "name": "SlotEquipmentsRemove",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "Transfer",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint64", "name": "id", "type": "uint64" },
+      { "internalType": "string", "name": "metadataURI", "type": "string" }
+    ],
+    "name": "addAssetEntry",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint64", "name": "assetId", "type": "uint64" },
+      { "internalType": "uint64", "name": "toBeReplacedId", "type": "uint64" }
+    ],
+    "name": "addAssetToToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint64", "name": "id", "type": "uint64" },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "catalogAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "targetSlotId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "targetCatalogAddress",
+            "type": "address"
+          },
+          { "internalType": "uint64[]", "name": "partIds", "type": "uint64[]" }
+        ],
+        "internalType": "struct ILightmEquippableEventsAndStruct.CatalogRelatedData",
+        "name": "catalogRelatedAssetData",
+        "type": "tuple"
+      },
+      { "internalType": "string", "name": "metadataURI", "type": "string" }
+    ],
+    "name": "addCatalogRelatedAssetEntry",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCollectionOwner",
+    "outputs": [
+      { "internalType": "address", "name": "owner", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes[]", "name": "data", "type": "bytes[]" }
+    ],
+    "name": "multicall",
+    "outputs": [
+      { "internalType": "bytes[]", "name": "results", "type": "bytes[]" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "newMetadata", "type": "string" }
+    ],
+    "name": "setCollectionMetadata",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "fallbackURI", "type": "string" }
+    ],
+    "name": "setFallbackURI",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  { "inputs": [], "name": "ERC721MintToTheZeroAddress", "type": "error" },
+  { "inputs": [], "name": "ERC721TokenAlreadyMinted", "type": "error" },
+  {
+    "inputs": [],
+    "name": "ERC721TransferToNonReceiverImplementer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LightmMintModuleIncorrectMerkleProof",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LightmMintModuleInsufficientValue",
+    "type": "error"
+  },
+  { "inputs": [], "name": "LightmMintModuleNoPublicStageSet", "type": "error" },
+  {
+    "inputs": [],
+    "name": "LightmMintModuleNoWhitelistStageSet",
+    "type": "error"
+  },
+  { "inputs": [], "name": "LightmMintModuleOverMintLimit", "type": "error" },
+  {
+    "inputs": [],
+    "name": "LightmMintModulePublicMintNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LightmMintModuleWhitelistMintNotAllowed",
+    "type": "error"
+  },
+  { "inputs": [], "name": "LightmMintModuleWrongMintStyle", "type": "error" },
+  { "inputs": [], "name": "RMRKIsNotContract", "type": "error" },
+  { "inputs": [], "name": "RMRKIsNotNestableImplementer", "type": "error" },
+  { "inputs": [], "name": "RMRKMintToNonRMRKImplementer", "type": "error" },
+  {
+    "inputs": [],
+    "name": "RMRKNestableTransferToNonRMRKNestableImplementer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "getMintConfig",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "whitelistMintPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "publicMintPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "whitelistMintLimit",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "publicMintLimit",
+            "type": "uint64"
+          },
+          {
+            "internalType": "enum ILightmMintModuleStruct.MintStyle",
+            "name": "mintStyle",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct ILightmMintModuleStruct.MintConfig",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMintPermissions",
+    "outputs": [
+      { "internalType": "bool", "name": "allowPublicMint", "type": "bool" },
+      { "internalType": "bool", "name": "allowWhitelistMint", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getWhitelistMerkleProofRoot",
+    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+    ],
+    "name": "mint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum ILightmMintModuleStruct.MintStage",
+        "name": "mintStage",
+        "type": "uint8"
+      },
+      { "internalType": "bool", "name": "allow", "type": "bool" }
+    ],
+    "name": "setMintPermission",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "root", "type": "bytes32" }
+    ],
+    "name": "setWhitelistMerkleProofRoot",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalSupply",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "bytes32[]", "name": "proof", "type": "bytes32[]" }
+    ],
+    "name": "whitelistMint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "address", "name": "to", "type": "address" },
+      { "internalType": "bytes32[]", "name": "proof", "type": "bytes32[]" }
+    ],
+    "name": "whitelistMint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

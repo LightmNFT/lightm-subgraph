@@ -1,14 +1,14 @@
 {
-  "name": "LightmNFT-subgraph",
+  "name": "lightm-nft-subgraph",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build-contract": "solc contracts/Gravity.sol --abi -o abis --overwrite && solc contracts/Gravity.sol --bin -o bin --overwrite",
-    "create": "graph create Ayuilos/LightmNFT-subgraph --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create Ayuilos/LightmNFT-subgraph --node http://127.0.0.1:8020",
+    "create": "graph create lightm-nft/lightm-nft --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create lightm-nft/lightm-nft --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy Ayuilos/LightmNFT-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy Ayuilos/LightmNFT-subgraph --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020"
+    "deploy": "graph deploy lightm-nft/lightm-nft --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "graph deploy lightm-nft/lightm-nft --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.30.2",

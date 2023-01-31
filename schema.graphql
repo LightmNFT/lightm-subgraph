@@ -1,6 +1,66 @@
-type Gravatar @entity {
+# Owner ---
+type Owner @entity {
   id: ID!
-  owner: Bytes!
-  displayName: String!
-  imageUrl: String!
+  address: String!
+  ownedCollections: [Collection!]! @derivedFrom(field: "owner")
+  ownedCatalogs: [Catalog!]! @derivedFrom(field: "owner")
+  ownedTokens: [Token!]! @derivedFrom(field: "owner")
+  collectionBalance: BigInt!
+  catalogBalance: BigInt!
+  balance: BigInt!
+}
+
+# Collection ---
+type Collection @entity {
+  id: ID!
+  address: String!
+  owner: Owner!
+  name: String
+  symbol: String
+  metadataURI: String!
+  totalSupply: BigInt
+  tokens: [Token!]! @derivedFrom(field: "collection")
+}
+
+# Token ---
+type Token @entity {
+  id: ID!
+  tokenId: BigInt!
+  owner: Owner
+  collection: Collection
+  createAtBlock: BigInt!
+  transfers: [Transfer!]! @derivedFrom(field: "token")
+}
+
+type Transfer @entity {
+  id: ID!
+  token: Token!
+  # Empty `from` is minting
+  from: Owner
+  # Empty `to` is burning
+  to: Owner
+  timestamp: BigInt!
+  block: BigInt!
+  transactionHash: String!
+}
+
+# Catalog ---
+type Catalog @entity {
+  id: ID!
+  address: String!
+  owner: Owner!
+  metadataURI: String!
+  type: String!
+  parts: [Part!]! @derivedFrom(field: "catalog")
+}
+
+type Part @entity {
+  id: ID!
+  catalog: Catalog!
+  partId: BigInt!
+  itemType: Int!
+  zIndex: Int!
+  metadataURI: String!
+  equippableAddresses: [String!]!
+  equippableToAll: Boolean!
 }
