@@ -19,6 +19,8 @@ type Collection @entity {
   symbol: String
   metadataURI: String!
   totalSupply: BigInt
+  createAtBlock: BigInt!
+  transactionHash: String!
   tokens: [Token!]! @derivedFrom(field: "collection")
 }
 
@@ -29,6 +31,7 @@ type Token @entity {
   owner: Owner
   collection: Collection
   createAtBlock: BigInt!
+  transactionHash: String!
   transfers: [Transfer!]! @derivedFrom(field: "token")
 }
 
@@ -51,6 +54,8 @@ type Catalog @entity {
   owner: Owner!
   metadataURI: String!
   type: String!
+  createAtBlock: BigInt!
+  transactionHash: String!
   parts: [Part!]! @derivedFrom(field: "catalog")
 }
 
@@ -63,4 +68,6 @@ type Part @entity {
   metadataURI: String!
   equippableAddresses: [String!]!
   equippableToAll: Boolean!
+  createAtBlock: BigInt!
+  transactionHash: String!
 }

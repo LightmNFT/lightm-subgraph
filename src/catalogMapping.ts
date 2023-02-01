@@ -72,6 +72,8 @@ export function handleAddedPart(event: AddedPart): void {
   part.zIndex = event.params.zIndex;
   part.metadataURI = event.params.metadataURI;
   part.equippableToAll = false;
+  part.createAtBlock = event.block.number;
+  part.transactionHash = event.transaction.hash.toHex();
 
   part.save();
 }
