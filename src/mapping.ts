@@ -31,6 +31,8 @@ export function handleCollectionCreated(event: LightmCollectionCreated): void {
   collection.metadataURI = "";
   collection.address = collectionAddress.toHex();
   collection.totalSupply = BigInt.fromI32(0);
+  collection.createAtBlock = event.block.number;
+  collection.transactionHash = event.transaction.hash.toHex();
 
   const instance = LightmCollection.bind(collectionAddress);
   const name = instance.try_name();
@@ -69,6 +71,8 @@ export function handleCatalogDeployed(event: LightmCatalogDeployed): void {
   catalog.address = catalogAddress.toHex();
   catalog.metadataURI = "";
   catalog.type = "";
+  catalog.createAtBlock = event.block.number;
+  catalog.transactionHash = event.transaction.hash.toHex();
 
   const ownerAddress = event.transaction.from;
   let owner = Owner.load(ownerAddress.toHex());
@@ -137,6 +141,7 @@ export function handleTransfer(event: TransferEvent): void {
     token = new Token(id);
     token.tokenId = event.params.tokenId;
     token.createAtBlock = event.block.number;
+    token.transactionHash = event.transaction.hash.toHex();
     token.collection = event.address.toHex();
   }
 
